@@ -1,9 +1,10 @@
 const appID = "loader"; // Your application name
 const apiKey = "0c6305c0343753fff17844a2f2219abe8cc0df416c7e1b8e0efa62bab3971437"; // Your API key
-const apiUrl = "https://cors-anywhere.herokuapp.com/https://keyauth.com/api/"; // CORS Anywhere Proxy
+const apiUrl = "https://api.allorigins.win/get?url=" + encodeURIComponent("https://keyauth.com/api/"); // All Origins Proxy
 
 async function validateKey() {
     const keyToValidate = document.getElementById('keyInput').value;
+    
     const response = await fetch(apiUrl + "validate", {
         method: "POST",
         headers: {
